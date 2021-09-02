@@ -1,0 +1,25 @@
+{
+	"name": "@verifico/web-api",
+	"description": "",
+	"version": "1.0.1",
+	"homepage": "https://verifico.co",
+	"main": "./dist/index.js",
+	"browser": "./dist/index.js",
+	"types": "./dist/types/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc",
+		"prepare": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/verifico/verifico-js.git",
+		"directory": "packages/web-api"
+	},
+	"dependencies": {
+		"@verifico/base-api": "^1.0.2",
+		"@verifico/web-util": "^1.0.4"
+	}
+}

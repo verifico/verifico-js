@@ -1,0 +1,21 @@
+{
+	"name": "@verifico/web-util",
+	"description": "",
+	"version": "1.0.5",
+	"homepage": "https://verifico.co",
+	"main": "./dist/index.js",
+	"browser": "./dist/index.js",
+	"types": "./dist/types/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rm -rf dist && tsc",
+		"prepare": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/verifico/verifico-js.git",
+		"directory": "packages/web-util"
+	}
+}
