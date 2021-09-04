@@ -1,16 +1,12 @@
-## @verifico/web-api
+## @verifico/node-api
 
-Este paquete proporciona el cliente de conexión a la API de Verifico desde el navegador.
-
-Se recomienda el consumo de la API de Verifico desde el lado del servidor, sin embargo se proporciona también este paquete del lado del usuario final para clientes que desean una menor latencia en la conexión a la API.
+Este paquete proporciona el cliente de conexión a la API de Verifico desde un entorno JavaScript de Node.js.
 
 ## Instalación
 
-`npm i @verifico/web-api`
+`npm i @verifico/node-api`
 
 ## Uso
-
-Como buena práctica de seguridad se recomienda que la llave de conexión a Verifico sea obtenida desde el servidor una vez se inicie la sesión del usuario. Si la autenticación se hace mediante tókenes JWT, puede hacer uso de campos persoanlizados (*Private claims*) para almacenar esta información, así como los identificadores del grupo de entes y del ente.
 
 **Ejemplo de uso para un comercio electrónico:**
 
@@ -29,7 +25,7 @@ import {
 	VariableReceptorDeFacturacion,
 	VariableDestinatarioDeEnvio,
 	VariableDireccionPostal
-} from "@verifico/web-api"
+} from "@verifico/node-api"
 
 let llave = '<LLAVE_DE_AUTORIZACIÓN_DE_API>'
 let grupoDeEntes = '<IDENTIFICADOR_DE_GRUPO_DE_ENTES>'

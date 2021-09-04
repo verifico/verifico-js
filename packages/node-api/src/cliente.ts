@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { Method as HTTPMethod } from 'axios';
 import { ClienteBase } from '@verifico/base-api'
 import { Evento, resultadoDeEvento } from '@verifico/base-api'
 import { resultadoDeVerificacionDeEvento } from '@verifico/base-api'
@@ -23,21 +25,20 @@ export class Cliente {
 }
 
 const clienteHTTP = async function(llave: string, metodo: string, recurso: string, datos: object) {
-	let res = await fetch(recurso, {
-		method: metodo,
+	return axios({
+		method: metodo as HTTPMethod,
+		url: recurso,
 		headers: {
 			'Content-Type': 'application/json',
 			'Authorization': llave
 		},
-		body: JSON.stringify(datos)
-	});
+		data: datos
+	}).then(res => {
+		if (res.status < 200 || res.status >= 300 || !res.data) {
+			let err = res.data && res.data.error ? res.data.error : 'error inesperado'
+			return Promise.reject({error: err})
+		}
 
-	let rta = await res.json()
-
-	if (!res.ok) {
-		let err = rta && rta.error ? rta.error : 'error inesperado'
-		return Promise.reject({error: err})
-	}
-
-	return rta
+		return res.data
+  })
 }

@@ -1,7 +1,7 @@
 {
-	"name": "@verifico/web-api",
+	"name": "@verifico/node-api",
 	"description": "",
-	"version": "1.0.2",
+	"version": "1.0.0",
 	"homepage": "https://verifico.co",
 	"main": "./dist/index.js",
 	"browser": "./dist/index.js",
@@ -16,10 +16,13 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/verifico/verifico-js.git",
-		"directory": "packages/web-api"
+		"directory": "packages/node-api"
 	},
 	"dependencies": {
 		"@verifico/base-api": "^1.0.2",
-		"@verifico/web-util": "^1.0.4"
+		"axios": "^0.21.3"
+	},
+	"devDependencies": {
+		"@types/node": "^16.7.10"
 	}
 }
